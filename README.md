@@ -34,6 +34,6 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 
 #### CLASSES
 
-1 Classe de entrada de arquivo;
-1 De tratamento de argumentos;
+1 Classe de entrada de arquivo; 
+1 De tratamento de argumentos; 
 2 De output.
