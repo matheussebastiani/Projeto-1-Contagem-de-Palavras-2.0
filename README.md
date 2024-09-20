@@ -31,3 +31,9 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 4. Adicionar a função de exportar a saída do algoritmo para um arquivo `.html`;
 5. Pesquisar sobre arquivos Unicode;
 6. Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito. 
+
+#### CLASSES
+
+1 Classe de entrada de arquivo;
+1 De tratamento de argumentos;
+2 De output.
