@@ -10,6 +10,15 @@ using namespace std;
 
 /*      Aqui tentaremos ordenar ponteiros para map de diferentes formas em um vector*/
 
+void ordena_tupla(const vector<pair<const wstring, int>*>& vet, string forma){
+
+    if()
+
+
+}
+
+
+
 int main(){
 
     wifstream arq; //tipo de arquivo conhecido como WIDE INPUT FILE
@@ -49,7 +58,7 @@ int main(){
     //ou seja, percorreremos um mapa e o colocaremos em uma tupla
 
     for(auto& elementos : ocorrencias){
-        vetor.push_back(&elementos);
+        vetor.push_back(&elementos); //inserindo endereços para o map no vector de tuplas
     }
     
     wcout << vetor[0]->first << " " << vetor[0]->second << endl; //WIDE COUT
