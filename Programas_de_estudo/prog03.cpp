@@ -3,6 +3,7 @@
 #include <map>
 #include <locale>
 #include <string>
+#include <cwctype> //para checar se o caractere é alfabético
 
 /*
 
@@ -13,6 +14,9 @@
     A classe locale permite que trabalhemos com diferentes "padrões de escrita de diferentes locais do mundo" podemos utilizar a função membro imbue, para "dizer" para
     a nossa wifstream como deve ser o "padrão de escrita" do nosso arquivo de saída.
 
+    PARA ISSO DEVO ESPECIFICAR QUE UTILIZAREI CARACTERES DE 16 BITS (wchar_t), STRINGS DE CARACTERES DE 16 BITS (wstring), ARQUIVOS DE ENTRADA "GRANDES"
+    (WIDE INPUT FILE) e ARQUIVOS "GRANDES" DE SAÍDA (WIDE OUTPUT FILE)
+
 */
 
 
@@ -20,11 +24,39 @@ using namespace std;
 
 int main(){
 
-    auto pt = locale(""); //definição da localidade do sistema, como não passo nada, pega a que está por padrão no sistema. no trabalho, deixaremos assim
-    //pois caso passemos algum parâmetro diferente, é necessário que o padrão esteja instalado no SO do dispositivo que está executando o programa.
-    cout.imbue(pt); //formata a função de saída de acordo com o locale em questão. imbue -> função membro da biblioteca fstream
-    double teste = 3.904342;
-    cout << "A localização selecionada é a: " << pt.name() << endl;
-    cout << teste << endl; //veja aqui como é a formatação do arquivo de saída. como no Brasil usamos a vírgula, a saída é com vírgula por conta do cout.imbue(pt);
+    wifstream arq; //tipo de arquivo conhecido como WIDE INPUT FILE
+    
+    auto pt = locale(""); //UTF8
+    
+    locale::global(pt); //define o padrão dos próximos objetos do tipo locale como UTF8
+    
+    arq.open("gpl.txt");
+    
+    arq.imbue(pt); //formata o arquivo de saída para UTF-8
+    
+    wofstream csv("palavras.csv"); // wide output file: comma separated values
+    
 
+    wchar_t ch; //desta vez, vamos ler caractere a caractere do arquivo
+    wstring palavra;
+
+    map<wstring, int> ocorrencias;
+
+    while(arq.get(ch)){ //lê um char por vez do arquivo
+       if(iswalpha(ch)){ //É uma letra?
+        palavra += tolower(ch); //concatenamos em uma string o caractere sempre em minusculo
+       }
+       else if(palavra.size() > 0){
+//      cout << palavra << endl;
+        ocorrencias[palavra]++; //a palavra é a chave. procura no map a palavra, incrementa o valor acessado pela chave. nos aproveitamos do bug de antes, que caso ele nao exista no map, ele insere com o valor default
+        palavra.clear(); //precisamos limpar a palavra após usá-la
+       }
+
+    }
+    csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
+    for(auto [k, v] : ocorrencias){
+        csv << '"' << k << '"' << ';' << v << endl; //mandamos para o csv. a string precisa estar entre aspas
+    }
+
+    cout << pt.name() << endl;
 }
