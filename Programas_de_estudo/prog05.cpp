@@ -4,23 +4,11 @@
 #include <locale>
 #include <string>
 #include <cwctype> //para checar se o caractere é alfabético
-
-/*
-
-    Aqui será testado o uso de caracteres wchar_t, caracteres de 16 bits do padrão unicode. Para trabalharmos com esse tipo de caractere de 16 bits, teremos que utilizar
-    componentes diferentes da biblioteca fstream, como o wifstream, que permite que os arquivos a serem lidos trabalhem com o tipo wchar_t. Uma string de wchar_t é uma
-    wstring (wide string, ou string larga pois é composta por caracteres de 16 bits). A aplicação em questão será exatamente igual ao algoritmo de aula e será futuramente
-    utilizado em uma classe.
-    A classe locale permite que trabalhemos com diferentes "padrões de escrita de diferentes locais do mundo" podemos utilizar a função membro imbue, para "dizer" para
-    a nossa wifstream como deve ser o "padrão de escrita" do nosso arquivo de saída.
-
-    PARA ISSO DEVO ESPECIFICAR QUE UTILIZAREI CARACTERES DE 16 BITS (wchar_t), STRINGS DE CARACTERES DE 16 BITS (wstring), ARQUIVOS DE ENTRADA "GRANDES"
-    (WIDE INPUT FILE) e ARQUIVOS "GRANDES" DE SAÍDA (WIDE OUTPUT FILE)
-
-*/
-
-
+#include <vector>
+#include <algorithm>
 using namespace std;
+
+/*      Aqui tentaremos ordenar ponteiros para map de diferentes formas em um vector*/
 
 int main(){
 
@@ -53,10 +41,27 @@ int main(){
        }
 
     }
-    csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
-    for(auto [k, v] : ocorrencias){
-        csv << '"' << k << '"' << ';' << v << endl; //mandamos para o csv. a string precisa estar entre aspas
-    }
+    
+    
+    cout << ocorrencias.size() << endl;
 
-    cout << pt.name() << endl; //FORMATADO
+    vector<pair<const wstring, int>*> vetor; //Estrutura pair, faremos um vector de ponteiros para TUPLAS, que recebeão o endereço do map tendo um valor first e second
+    //ou seja, percorreremos um mapa e o colocaremos em uma tupla
+
+    for(auto& elementos : ocorrencias){
+        vetor.push_back(&elementos);
+    }
+    
+    wcout << vetor[0]->first << " " << vetor[0]->second << endl; //WIDE COUT
+
+
+
+    // }
+    // csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
+    // for(auto [k, v] : ocorrencias){
+    //     csv << '"' << k << '"' << ';' << v << endl; //mandamos para o csv. a string precisa estar entre aspas
+    // }
+
+    // cout << pt.name() << endl; //FORMATADO
+
 }
