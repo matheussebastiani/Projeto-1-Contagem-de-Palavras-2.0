@@ -6,9 +6,27 @@
 #include <cwctype> //para checar se o caractere é alfabético
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 /*      Aqui tentaremos ordenar ponteiros para map de diferentes formas em um vector*/
+
+
+/*
+
+                                                    EXPLICAÇÃO DA FUNÇÃO ordena_tupla();
+
+        * Basicamente essa função recebe um vector com ponteiros para tuplas por referência e uma string, que define como será feito o ordenamento do vector.
+
+        * Basicamente está sendo usado o algoritmo padrão do C++ de ordenação (sort) juntamente com funções lambda para definir como será ordenado o vector.
+
+        * No caso, a tupla possui dois campos: first e second. O elemento first é a wstring (key) e o second e o value do map.
+
+        * As lógicas de ordenação consistem na lógica básica para ordenação ascendente e descendente com wstrings e inteiros.
+
+*/
+
+
 
 void ordena_tupla(vector<pair<const wstring, int>*>& vet, string forma){
 
