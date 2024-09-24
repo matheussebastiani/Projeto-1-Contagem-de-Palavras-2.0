@@ -10,9 +10,45 @@ using namespace std;
 
 /*      Aqui tentaremos ordenar ponteiros para map de diferentes formas em um vector*/
 
-void ordena_tupla(const vector<pair<const wstring, int>*>& vet, string forma){
+void ordena_tupla(vector<pair<const wstring, int>*>& vet, string forma){
 
-    if()
+    if(forma == "-ac"){ //ascendente wstring
+
+        sort(vet.begin(), vet.end(), [](const pair<const wstring, int>* a, const pair<const wstring, int>* b){ //estamos no fundo ordenando ponteiros para estruturas do tipo pair
+            
+            return a->first < b->first; //compara string com string
+
+        }); //redundante, mas pode ser útil para um unordered_map
+
+    }
+
+    else if(forma == "-ad"){ //descentente wstring
+
+        sort(vet.begin(), vet.end(), [](const pair<const wstring, int>* a, const pair<const wstring, int>* b){ 
+            
+            return a->first > b->first; //compara wstring com wstring
+
+        });
+    }
+    else if(forma == "-nc"){ //ascendente ocorrencias
+
+        sort(vet.begin(), vet.end(), [](const pair<const wstring, int>* a , const pair<const wstring, int>* b){ 
+            
+            return a->second < b->second; //compara inteiro com inteiro
+
+        });
+    
+    }
+
+    else if(forma == "-nd"){ //descendente ocorrencias
+
+        sort(vet.begin(), vet.end(), [](const pair<const wstring, int>* a, pair<const wstring, int>* b){ 
+            
+            return a->second > b->second; //compara inteiro com inteiro
+
+        });
+    
+    }
 
 
 }
@@ -64,13 +100,25 @@ int main(){
     wcout << vetor[0]->first << " " << vetor[0]->second << endl; //WIDE COUT
 
 
+    string qual;
 
-    // }
-    // csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
-    // for(auto [k, v] : ocorrencias){
-    //     csv << '"' << k << '"' << ';' << v << endl; //mandamos para o csv. a string precisa estar entre aspas
-    // }
+    cout << "Escolha como você gostaria de ordenar o arquivo de saída:\n";
+    cout << "-ac: ordem alfabética ascendente\n";
+    cout << "-ad ordem alfabética descendente \n";
+    cout << "-nc ordenado por número de aparições de maneira ascendente\n";
+    cout << "-nd ordenado por número de aparições de maneira descendente\n";
 
-    // cout << pt.name() << endl; //FORMATADO
+
+    cin >> qual;
+
+    ordena_tupla(vetor, qual);
+
+    
+    csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
+    for(auto matheus : vetor){
+        csv << '"' << matheus->first << '"' << ';' << matheus->second << endl; //mandamos para o csv. a string precisa estar entre aspas
+    }
+
+    cout << pt.name() << endl; //FORMATADO
 
 }
