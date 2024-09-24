@@ -37,8 +37,9 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 1 Classe de entrada de arquivo;  
 1 De tratamento de argumentos;  
 2 De output.
-3. De input.
+
 
 ORDENAR ARRAY DE PONTEIROS DO MAP
 PERCORRER MAP COM ITERATOR
 CADA ITERAÇÃO DA UM PUSH BACK NO VECTOR E DAR UM SORT NO VECTOR
+
