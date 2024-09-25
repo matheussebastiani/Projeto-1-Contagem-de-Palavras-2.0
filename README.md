@@ -25,13 +25,14 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 
 ### TO DO LIST
 
-1. Implementar no algoritmo `palavras.cpp`, desenvolvido em aula, a possibilidade de receber por parâmetro o arquivo a ser lido para que seja feita a contagem de palavras;
-2. Modularizar e organizar o código já feito;
-3. Encontrar outras formas de organizar o `map` para assim ser possível aceitarmos outros parâmetros no algoritmo;
-4. Adicionar a função de exportar a saída do algoritmo para um arquivo `.html`;
-5. Pesquisar sobre arquivos Unicode;
-6. Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito. 
-
+- [X] 1. ~~Implementar no algoritmo `palavras.cpp`, desenvolvido em aula, a possibilidade de receber por parâmetro o arquivo a ser lido para que seja feita a contagem de palavras;~~
+- [] 2. Modularizar e organizar o código já feito;
+- [X] 3. ~~Encontrar outras formas de organizar o `map` para assim ser possível aceitarmos outros parâmetros no algoritmo;~~
+- [X] 4. ~~Adicionar a função de exportar a saída do algoritmo para um arquivo `.html`;~~
+- [X] 5. ~~Pesquisar sobre arquivos Unicode;~~
+- [X] 6. ~~Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito.~~
+- [] 7. Implementar classes contendo as funções desenvolvidas nos programas de estudos.
+- 
 #### CLASSES
 
 1 Classe de entrada de arquivo;  
@@ -39,7 +40,7 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 2 De output.
 
 
-ORDENAR ARRAY DE PONTEIROS DO MAP
-PERCORRER MAP COM ITERATOR
-CADA ITERAÇÃO DA UM PUSH BACK NO VECTOR E DAR UM SORT NO VECTOR
+* ORDENAR ARRAY DE PONTEIROS DO MAP  
+* PERCORRER MAP COM ITERATOR  
+* CADA ITERAÇÃO DA UM PUSH BACK NO VECTOR E DAR UM SORT NO VECTOR  
 
