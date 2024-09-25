@@ -26,12 +26,12 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 ### TO DO LIST
 
 - [X] 1. ~~Implementar no algoritmo `palavras.cpp`, desenvolvido em aula, a possibilidade de receber por parâmetro o arquivo a ser lido para que seja feita a contagem de palavras;~~
-- [] 2. Modularizar e organizar o código já feito;
+- [ ] 2. Modularizar e organizar o código já feito;
 - [X] 3. ~~Encontrar outras formas de organizar o `map` para assim ser possível aceitarmos outros parâmetros no algoritmo;~~
 - [X] 4. ~~Adicionar a função de exportar a saída do algoritmo para um arquivo `.html`;~~
 - [X] 5. ~~Pesquisar sobre arquivos Unicode;~~
 - [X] 6. ~~Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito.~~
-- [] 7. Implementar classes contendo as funções desenvolvidas nos programas de estudos.
+- [ ] 7. Implementar classes contendo as funções desenvolvidas nos programas de estudos.
 - 
 #### CLASSES
 
