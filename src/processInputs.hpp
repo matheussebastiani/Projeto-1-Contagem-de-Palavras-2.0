@@ -48,10 +48,9 @@ class processInputs{
 
         processInputs();
 
-        void processa_argumentos(int argc, char **argv);
+        void processa_argumentos(int argc, char* argv[]);
 
         void processa_entrada(std::string arquivo);
-
         
         //funções de get:
 
@@ -63,6 +62,9 @@ class processInputs{
             return formato_saida;
         }
 
+        std::string get_nome_arquivo(){
+            return nome_arquivo;
+        }
         //funções de set não serão implementadas pois as variáveis membro serão alteradas por dentro da classe.
 
 };

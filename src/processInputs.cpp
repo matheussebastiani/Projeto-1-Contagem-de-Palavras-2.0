@@ -37,7 +37,7 @@ namespace inp{
 
     */
 
-    void processInputs::processa_argumentos(int argc, char **argv){
+    void processInputs::processa_argumentos(int argc, char* argv[]){
 
         if(argc == 1){ //se o argc for igual a 1, o usuário apenas executou o programa, sem especificar qual arquivo ele deseja ordenar
 
