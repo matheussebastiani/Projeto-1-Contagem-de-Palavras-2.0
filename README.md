@@ -32,7 +32,7 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 - [X] 5. ~~Pesquisar sobre arquivos Unicode;~~
 - [X] 6. ~~Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito.~~
 - [ ] 7. Implementar classes contendo as funções desenvolvidas nos programas de estudos.
-- 
+
 #### CLASSES
 
 1 Classe de entrada de arquivo;  
