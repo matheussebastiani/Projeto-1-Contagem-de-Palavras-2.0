@@ -40,9 +40,13 @@ class processInputs{
 
         std::map<std::wstring, int> ocorrencias;
 
+        int caracteres;
+        int total_palavras;
+        int palavras_distintas;
+
     public:
 
-        processInputs(); //construtor sem parâmetros, pois os dados deverão ser processados por outras funções, não necessariamente na hora da declaração do objeto.
+        processInputs();
 
         void processa_argumentos(int argc, char **argv);
 
