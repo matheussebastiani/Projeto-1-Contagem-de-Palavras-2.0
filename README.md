@@ -35,6 +35,8 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 - [ ] 8. Desenvolver uma func membro da classe processInputs que leia um arq de texto utf-8 com caracter string wchar e wifstream e wofstream (colocar os arquivos dentro de um map)
 - [ ] 9. Enquanto estiver lendo o arquivo, deve contar quantas palavras foram lidas, quantos caracteres foram lidos e quantas palavras distintas (usando o tamanho do map).
 - [ ] 10. Antes de executar qualquer arq, verificar se ele é utf-8 e se ele consegue ser aberto.
+- [ ] 11. Fazer uma classe que receba um map e o insira em um vector com ponteiros para pair.
+- [ ] 12. Fazer novas classes que recebem o vector ordenado e o convertem para um arquivo de saída `.html` ou `.csv`.
 
 #### CLASSES
 
