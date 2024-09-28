@@ -133,4 +133,4 @@ namespace inp{
     }
     
 };  //namespace inp
-// falar com o @brusso sobre a ultima palavra com um arquivo de texto que não termine com um caracter
+// falar com o brusso sobre a ultima palavra com um arquivo de texto que não termine com um caracter na próxima aula.
