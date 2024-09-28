@@ -16,6 +16,7 @@
 #include <string>
 #include <map>
 #include <iostream>
+#include <stdlib.h>
 
 namespace mid{
 
@@ -40,7 +41,7 @@ namespace mid{
             }
             else{
                 std::cout << "Não há elementos no vector em questão!" << std::endl;
-                exit;
+                return pointer_vector;
             }
          }
                 

@@ -24,6 +24,7 @@ int main(int argc, char* argv[]){
 
     mid::processMap samuel;
       samuel.pushMap(entrada.get_map());
+      samuel.sort_vector(samuel.get_ordered_vector(), entrada.get_modo_ordenacao());
       for(auto v : samuel.get_ordered_vector()){
         std::wcout << v->first << ", " << v->second << std::endl;
       }
