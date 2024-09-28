@@ -16,5 +16,10 @@ int main(int argc, char* argv[]){
 
     std::cout << entrada.get_nome_arquivo() << std::endl;
 
+    entrada.processa_entrada(entrada.get_nome_arquivo());
+    std::cout << entrada.get_palavras_distintas() << std::endl;
+    std::cout << entrada.get_total_palavras() << std::endl;
+    std::cout << entrada.get_qtd_caracteres() << std::endl;
+
 
 }

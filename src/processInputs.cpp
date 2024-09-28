@@ -1,6 +1,12 @@
 #include "processInputs.hpp"
 #include <iostream>
 #include <cstring> //strcmp
+#include <locale>
+#include <map>
+#include <string>
+#include <fstream>
+#include <cwctype> //checar se é alfabético
+
 /*
 
                                             Aqui ficará a implementação das funções-membro da classe processInputs.
@@ -15,9 +21,8 @@ namespace inp{
       iniciar essas variáveis membro com um valor padrão no construtor do objeto da classe processInputs.
     */
 
-    processInputs::processInputs() : modo_ordenacao{"-ac"}, formato_saida{"-csv"} {}
-    
-    
+    processInputs::processInputs() : modo_ordenacao{"-ac"}, formato_saida{"-csv"}, caracteres{0}, total_palavras{0}, palavras_distintas{0} {}
+        
     
     /*
     
@@ -80,9 +85,52 @@ namespace inp{
 
     }
 
+    /*  
+
+        Esse codigo utiliza caracteres wchar_t (16 bits) e strings wstring (string larga) para manipulação de textos com suporte ao padrão unicode. Para isso, foi utilizado 
+        wifstream e wofstream para leitura e saida dos dados no formato wide.
+        A configuração da classe locate com a função membro imbue foi aplicada para suportar o padrão UTF-8.
+        Essa função é baseada no uso do locale e classe wide para manipular os caracteres de 16 bits, como utilizado nesta classe.
+        Essa funcao vai receber uma string, le um arquivo de texto (se consegue ser aberto ou nao) e depoiis insere as palavras possiveis dentro de um arquivo de texto
+        em um map.
 
 
+    */
+   
+    void processInputs::processa_entrada(std::string arquivo) {
+
+        std::wifstream wif;
+        auto pt = std::locale(""); //UTF8
+        std::locale::global(pt); //define o padrão dos próximos objetos do tipo locale como UTF8
+        wif.open(arquivo);
+        wif.imbue(pt); 
 
 
+        if (wif.fail()) {
+            std::cout << "Erro ao abrir o arquivo de entrada." << std::endl; 
+            return;
+        }
 
-} //namespace inp
+          wchar_t ch; //desta vez, vamos ler caractere a caractere do arquivo
+            std::wstring palavra;
+
+        while(wif.get(ch)){ //lê um wchar_t por vez do arquivo
+       if(iswalpha(ch)){ //É uma letra?
+       caracteres++; //conta os caracteres
+        palavra += tolower(ch); //concatenamos em uma wstring o caractere sempre em minusculo
+       }
+       else if(palavra.size()>0){
+        ocorrencias[palavra]++;
+        total_palavras++;
+        palavra.clear();
+       }
+    }
+        palavras_distintas=ocorrencias.size();
+        for(auto [k,v] : ocorrencias){
+        std::wcout << "[" << k << ", " << v << "]" << std::endl;
+    }
+    wif.close();
+    }
+    
+};  //namespace inp
+// falar com o @brusso sobre a ultima palavra com um arquivo de texto que não termine com um caracter

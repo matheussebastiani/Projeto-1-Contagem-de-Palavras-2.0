@@ -65,6 +65,15 @@ class processInputs{
         std::string get_nome_arquivo(){
             return nome_arquivo;
         }
+        int get_qtd_caracteres(){
+            return caracteres;
+        }
+        int get_total_palavras(){
+            return total_palavras;
+        }
+        int get_palavras_distintas(){
+            return palavras_distintas;
+        }
         //funções de set não serão implementadas pois as variáveis membro serão alteradas por dentro da classe.
 
 };
