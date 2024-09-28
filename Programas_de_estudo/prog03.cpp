@@ -55,8 +55,8 @@ int main(){
     }
     csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
     for(auto [k, v] : ocorrencias){
-        csv << '"' << k << '"' << ';' << v << endl; //mandamos para o csv. a string precisa estar entre aspas
+        csv << '"' << k << '"' << ';' << v << std::endl; //mandamos para o csv. a string precisa estar entre aspas
     }
 
-    cout << pt.name() << endl; //FORMATADO
+    std::cout << pt.name() << std::endl; //FORMATADO
 }
