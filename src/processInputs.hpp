@@ -1,7 +1,3 @@
-
-#include <string>
-#include <map>
-
 /*
                                                                 CLASSE processInputs
     
@@ -23,8 +19,11 @@
 
 
 #ifndef PROCESSINPUTS_HPP
-
 #define PROCESSINPUTS_HPP
+
+#include <string>
+#include <map>
+
 
 namespace inp{
 

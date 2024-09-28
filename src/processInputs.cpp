@@ -86,7 +86,7 @@ namespace inp{
     }
 
     /*  
-
+        Escopo da função processa_entrada():
         Esse codigo utiliza caracteres wchar_t (16 bits) e strings wstring (string larga) para manipulação de textos com suporte ao padrão unicode. Para isso, foi utilizado 
         wifstream e wofstream para leitura e saida dos dados no formato wide.
         A configuração da classe locate com a função membro imbue foi aplicada para suportar o padrão UTF-8.
@@ -101,7 +101,7 @@ namespace inp{
 
         std::wifstream wif;
         auto pt = std::locale(""); //UTF8
-        std::locale::global(pt); //define o padrão dos próximos objetos do tipo locale como UTF8
+        std::locale::global(pt); //define o padrão de execução como UTF8
         wif.open(arquivo);
         wif.imbue(pt); 
 
@@ -111,25 +111,25 @@ namespace inp{
             return;
         }
 
-          wchar_t ch; //desta vez, vamos ler caractere a caractere do arquivo
-            std::wstring palavra;
+        wchar_t ch;
+        std::wstring palavra;
 
         while(wif.get(ch)){ //lê um wchar_t por vez do arquivo
-       if(iswalpha(ch)){ //É uma letra?
-       caracteres++; //conta os caracteres
-        palavra += tolower(ch); //concatenamos em uma wstring o caractere sempre em minusculo
-       }
-       else if(palavra.size()>0){
-        ocorrencias[palavra]++;
-        total_palavras++;
-        palavra.clear();
-       }
+            if(iswalpha(ch)){ //É uma letra?
+                caracteres++; //conta os caracteres
+                palavra += tolower(ch); //concatenamos em uma wstring o caractere sempre em minusculo
+            }
+            else if(palavra.size()>0){
+                ocorrencias[palavra]++;
+                total_palavras++;
+                palavra.clear();
+            }
     }
     //     palavras_distintas=ocorrencias.size();
     //     for(auto [k,v] : ocorrencias){
     //     std::wcout << "[" << k << ", " << v << "]" << std::endl;
     // }
-    wif.close();
+        wif.close();
     }
     
 };  //namespace inp
