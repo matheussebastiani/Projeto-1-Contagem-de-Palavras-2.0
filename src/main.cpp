@@ -1,5 +1,6 @@
 #include "processInputs.hpp"
 #include <iostream>
+#include "processMap.hpp"
 
 
 int main(int argc, char* argv[]){
@@ -21,11 +22,16 @@ int main(int argc, char* argv[]){
     std::cout << entrada.get_total_palavras() << std::endl;
     std::cout << entrada.get_qtd_caracteres() << std::endl;
 
-
-    for(auto [k,v] : entrada.get_map()){
-    std::wcout << "[" << k << ", " << v << "]" << std::endl; //ok, então consigo retornar um map através de uma função e FUNCIONA!
+    mid::processMap samuel;
+      samuel.pushMap(entrada.get_map());
+      for(auto v : samuel.get_ordered_vector()){
+        std::wcout << v->first << ", " << v->second << std::endl;
+      }
     
-    }
+    //for(auto [k,v] : entrada.get_map()){
+    // std::wcout << "[" << k << ", " << v << "]" << std::endl; //ok, então consigo retornar um map através de uma função e FUNCIONA!
+    
+    // }
 
     
 

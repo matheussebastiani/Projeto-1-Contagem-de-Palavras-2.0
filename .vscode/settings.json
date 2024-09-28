@@ -48,5 +48,6 @@
         "typeinfo": "cpp",
         "cstring": "cpp",
         "ctime": "cpp"
-    }
+    },
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

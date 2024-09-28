@@ -40,7 +40,7 @@ namespace mid{
             }
             else{
                 std::cout << "Não há elementos no vector em questão!" << std::endl;
-                return;
+                exit;
             }
          }
                 

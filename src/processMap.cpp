@@ -23,9 +23,10 @@ namespace mid{
 
     */
 
-    void pushMap(std::map<std::wstring, int> palavrasLidas){
-
-
+    void processMap::pushMap(std::map<std::wstring, int> palavrasLidas){
+        for(auto& palavras : palavrasLidas){
+            pointer_vector.push_back(&palavras);
+        }
     }
 
 
@@ -39,9 +40,8 @@ namespace mid{
     
     */
 
-    void sort_vector(std::vector<std::pair<const std::wstring, int>*> vet, std::string modo){
-
-
+    void sort_vector(std::vector<std::pair<const std::wstring, int>*> vet, std::string forma){
+        
     }
 
 
