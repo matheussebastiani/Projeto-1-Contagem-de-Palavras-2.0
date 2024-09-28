@@ -22,4 +22,9 @@ int main(int argc, char* argv[]){
     std::cout << entrada.get_qtd_caracteres() << std::endl;
 
 
+    for(auto [k,v] : entrada.get_map()){
+    std::wcout << "[" << k << ", " << v << "]" << std::endl; //ok, então consigo retornar um map através de uma função e FUNCIONA!
+    
+    }
+
 }

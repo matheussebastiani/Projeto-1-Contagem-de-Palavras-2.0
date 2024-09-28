@@ -125,10 +125,10 @@ namespace inp{
         palavra.clear();
        }
     }
-        palavras_distintas=ocorrencias.size();
-        for(auto [k,v] : ocorrencias){
-        std::wcout << "[" << k << ", " << v << "]" << std::endl;
-    }
+    //     palavras_distintas=ocorrencias.size();
+    //     for(auto [k,v] : ocorrencias){
+    //     std::wcout << "[" << k << ", " << v << "]" << std::endl;
+    // }
     wif.close();
     }
     
