@@ -40,8 +40,8 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 
 #### CLASSES
 
-1 Classe de entrada de arquivo;  
-1 De tratamento de argumentos;  
+## inp::processInputs:
+* Recebe da função `main` os argumentos passados pelo Sistema Operacional na chamada do software e baseado nisso, processa os dados de entrada e lê o arquivo de texto passado. Pode ser conferido aqui: [processInputs.hpp] (/src/processInputs.hpp) e aqui: [processInputs.cpp] (/src/processInputs.cpp).
 2 De output.
 
 
