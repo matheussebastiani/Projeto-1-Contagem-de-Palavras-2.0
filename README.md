@@ -38,10 +38,15 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 - [ ] 11. Fazer uma classe que receba um map e o insira em um vector com ponteiros para pair.
 - [ ] 12. Fazer novas classes que recebem o vector ordenado e o convertem para um arquivo de saída `.html` ou `.csv`.
 
-#### CLASSES
+---
+
+# CLASSES
 
 ## inp::processInputs:
-* Recebe da função `main` os argumentos passados pelo Sistema Operacional na chamada do software e baseado nisso, processa os dados de entrada e lê o arquivo de texto passado. Pode ser conferido aqui: [processInputs.hpp] (/src/processInputs.hpp) e aqui: [processInputs.cpp] (/src/processInputs.cpp).
+* Recebe da função `main` os argumentos passados pelo Sistema Operacional na chamada do software e baseado nisso, processa os dados de entrada e lê o arquivo de texto passado. Pode ser conferido aqui: [processInputs.hpp](/src/processInputs.hpp) e aqui: [processInputs.cpp](/src/processInputs.cpp).  
+
+
+
 2 De output.
 
 
