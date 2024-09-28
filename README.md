@@ -32,16 +32,21 @@ Repositório do primeiro projeto da disciplina de Laboratório de Programação 
 - [X] 5. ~~Pesquisar sobre arquivos Unicode;~~
 - [X] 6. ~~Adaptar o `palavras.cpp` para exportar um arquivo `.html` ao invés de um `.csv` para fins de validação de conceito.~~
 - [ ] 7. Implementar classes contendo as funções desenvolvidas nos programas de estudos.
-- [ ] 8. Desenvolver uma func membro da classe processInputs que leia um arq de texto utf-8 com caracter string wchar e wifstream e wofstream (colocar os arquivos dentro de um map)
-- [ ] 9. Enquanto estiver lendo o arquivo, deve contar quantas palavras foram lidas, quantos caracteres foram lidos e quantas palavras distintas (usando o tamanho do map).
-- [ ] 10. Antes de executar qualquer arq, verificar se ele é utf-8 e se ele consegue ser aberto.
+- [X] 8. Desenvolver uma func membro da classe processInputs que leia um arq de texto utf-8 com caracter string wchar e wifstream e wofstream (colocar os arquivos dentro de um map)
+- [X] 9. Enquanto estiver lendo o arquivo, deve contar quantas palavras foram lidas, quantos caracteres foram lidos e quantas palavras distintas (usando o tamanho do map).
+- [X] 10. Antes de executar qualquer arq, verificar se ele é utf-8 e se ele consegue ser aberto.
 - [ ] 11. Fazer uma classe que receba um map e o insira em um vector com ponteiros para pair.
 - [ ] 12. Fazer novas classes que recebem o vector ordenado e o convertem para um arquivo de saída `.html` ou `.csv`.
 
-#### CLASSES
+---
 
-1 Classe de entrada de arquivo;  
-1 De tratamento de argumentos;  
+# CLASSES
+
+## inp::processInputs:
+* Recebe da função `main` os argumentos passados pelo Sistema Operacional na chamada do software e baseado nisso, processa os dados de entrada e lê o arquivo de texto passado. Pode ser conferido aqui: [processInputs.hpp](/src/processInputs.hpp) e aqui: [processInputs.cpp](/src/processInputs.cpp).  
+
+
+
 2 De output.
 
 

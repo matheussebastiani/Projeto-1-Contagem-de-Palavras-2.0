@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream> //para ler o arquivo de texto. stream -> fluxo de dados de entrada e saída
-#include <cctype> //O C VAI NOS SALVAR!!!!!!!!!!!!
+#include <cctype> //O C VAI NOS SALVAR!!!!!!!!!!!! (nao vai nãokkkkkkkkj)
 #include <map>
 
 using namespace std;
