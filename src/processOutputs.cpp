@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <locale>
+
 namespace out{
 
 /*
@@ -16,6 +18,8 @@ e sao formatados para o padrao html para a criacao de uma tabela.
 void processOutputs::export_html(){
     std::wstring nome_saida = L"HTML OUTPUT";
     std::wofstream html("saida.html");
+    html.imbue(std::locale(""));
+
 
     html << L"<!DOCTYPE html>\n";
     html << L"<html lang=\"pt-br\">\n";
@@ -80,6 +84,7 @@ e sao formatados para o padrao csv para a criacao de uma tabela.
 
 void processOutputs::export_csv(){
     std::wofstream csv("saida.csv"); 
+    csv.imbue(std::locale(""));
     csv << "\"Palavra\";\"N\"\n"; 
     for(auto loca : vector_saida){
         csv << '"' << loca->first << '"' << ';' << loca->second << std::endl; 
