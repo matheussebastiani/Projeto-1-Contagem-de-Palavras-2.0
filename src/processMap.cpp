@@ -25,7 +25,7 @@ namespace mid{
 
     */
 
-    void processMap::pushMap(std::map<std::wstring, int> palavrasLidas){
+    void processMap::pushMap(std::map<std::wstring, int>& palavrasLidas){
         for(auto& palavras : palavrasLidas){
             pointer_vector.push_back(&palavras);
         }
