@@ -43,10 +43,10 @@ void processOutputs::export_html(){
 
     /* Insiro aqui um for auto que lerá o map entre as tags necessárias para o HTML*/
 
-    for(auto gustavo : vector_saida){
+    for(auto loça : vector_saida){
         html << "            <tr>\n";
-        html << "                <td>" << gustavo->first << "</td>\n";
-        html << "                <td>" << gustavo->second << "</td>\n";
+        html << "                <td>" << loça->first << "</td>\n";
+        html << "                <td>" << loça->second << "</td>\n";
         html << "            </tr>\n";
     }
 
@@ -60,6 +60,12 @@ void processOutputs::export_html(){
 }
 
 void processOutputs::export_csv(){
+    std::wofstream csv("saida.csv"); 
+    csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
+    for(auto loça : vector_saida){
+        csv << '"' << loça->first << '"' << ';' << loça->second << std::endl; //mandamos para o csv. a string precisa estar entre aspas
+    }
+
 
 }
 
