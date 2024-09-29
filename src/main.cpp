@@ -2,6 +2,7 @@
 #include <iostream>
 #include "processMap.hpp"
 #include <map>
+#include <vector>
 
 int main(int argc, char* argv[]){
 
@@ -32,6 +33,8 @@ int main(int argc, char* argv[]){
       for(auto v : samuel.get_ordered_vector()){
         std::wcout << v->first << ", " << v->second << std::endl;
       }
+
+    std::vector<std::pair<const std::wstring, int>*> vector_auxiliar;
     
     //for(auto [k,v] : entrada.get_map()){
     // std::wcout << "[" << k << ", " << v << "]" << std::endl; //ok, então consigo retornar um map através de uma função e FUNCIONA!
