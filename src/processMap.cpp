@@ -42,11 +42,11 @@ namespace mid{
     
     */
 
-    void processMap::sort_vector(std::vector<std::pair<const std::wstring, int>*> vet, std::string forma){
+    void processMap::sort_vector(std::string forma){
         
     if(forma == "-ac"){ //ascendente wstring
 
-        sort(vet.begin(), vet.end(), [](const std::pair <const std::wstring, int>* a, const std::pair<const std::wstring, int>* b){ //estamos no fundo ordenando ponteiros para estruturas do tipo pair
+        std::sort(pointer_vector.begin(), pointer_vector.end(), [](const std::pair <const std::wstring, int>* a, const std::pair<const std::wstring, int>* b){ //estamos no fundo ordenando ponteiros para estruturas do tipo pair
 
             return a->first < b->first; //compara string com string
 
@@ -56,7 +56,7 @@ namespace mid{
 
     else if(forma == "-ad"){ //descentente wstring
 
-        sort(vet.begin(), vet.end(), [](const std::pair<const std::wstring, int>* a, const std::pair<const std::wstring, int>* b){ 
+        std::sort(pointer_vector.begin(), pointer_vector.end(), [](const std::pair<const std::wstring, int>* a, const std::pair<const std::wstring, int>* b){ 
 
             return a->first > b->first; //compara wstring com wstring
 
@@ -64,7 +64,7 @@ namespace mid{
     }
     else if(forma == "-nc"){ //ascendente ocorrencias
 
-        sort(vet.begin(), vet.end(), [](const std::pair<const std::wstring, int>* a , const std::pair<const std::wstring, int>* b){ 
+        std::sort(pointer_vector.begin(), pointer_vector.end(), [](const std::pair<const std::wstring, int>* a , const std::pair<const std::wstring, int>* b){ 
 
             return a->second < b->second; //compara inteiro com inteiro
 
@@ -74,7 +74,7 @@ namespace mid{
 
     else if(forma == "-nd"){ //descendente ocorrencias
 
-        sort(vet.begin(), vet.end(), [](const std::pair<const std::wstring, int>* a, std::pair<const std::wstring, int>* b){ 
+        std::sort(pointer_vector.begin(), pointer_vector.end(), [](const std::pair<const std::wstring, int>* a, std::pair<const std::wstring, int>* b){ 
 
             return a->second > b->second; //compara inteiro com inteiro
 

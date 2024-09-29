@@ -24,9 +24,11 @@ int main(int argc, char* argv[]){
 
     std::map<std::wstring, int> map_ref = entrada.get_map();
 
-    mid::processMap samuel;
+      mid::processMap samuel;
       samuel.pushMap(map_ref);
-      //samuel.sort_vector(samuel.get_ordered_vector(), entrada.get_modo_ordenacao());
+      
+      samuel.sort_vector(entrada.get_modo_ordenacao());
+      
       for(auto v : samuel.get_ordered_vector()){
         std::wcout << v->first << ", " << v->second << std::endl;
       }

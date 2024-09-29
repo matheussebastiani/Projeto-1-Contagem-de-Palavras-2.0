@@ -32,7 +32,7 @@ namespace mid{
         
         void pushMap(std::map<std::wstring, int>& palavrasLidas);
 
-        void sort_vector(std::vector<std::pair<const std::wstring, int>*> vet, std::string modo);
+        void sort_vector(std::string modo);
 
         std::vector<std::pair<const std::wstring, int>*> get_ordered_vector(){
             
