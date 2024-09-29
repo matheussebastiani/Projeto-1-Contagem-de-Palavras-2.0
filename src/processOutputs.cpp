@@ -4,6 +4,15 @@
 
 namespace out{
 
+/*
+O escopo da funcao membro export_html,
+essa funcao acessa um vector de ponteiros para pair 
+e cria um arquvido wide output stream, 
+nesse arquivo sao colocados os elementos ordenados do vector 
+e sao formatados para o padrao html para a criacao de uma tabela.
+
+*/
+
 void processOutputs::export_html(){
     std::wstring nome_saida = L"HTML OUTPUT";
     std::wofstream html("saida.html");
@@ -14,7 +23,7 @@ void processOutputs::export_html(){
     html << "    <meta charset=\"UTF-8\">\n";
     html << "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n";
     html << "    <title>" << nome_saida << "</title>\n";
-    //agora vai a perfumaria da tabela HTML, por quê? porque sim!!
+    
     html << "    <style>\n";
     html << "        table {\n";
     html << "            width: 100%;\n";
@@ -41,7 +50,7 @@ void processOutputs::export_html(){
     html << "        </thead>\n";
     html << "        <tbody>\n";
 
-    /* Insiro aqui um for auto que lerá o map entre as tags necessárias para o HTML*/
+    
 
     for(auto loça : vector_saida){
         html << "            <tr>\n";
@@ -59,11 +68,20 @@ void processOutputs::export_html(){
 
 }
 
+
+/*
+O escopo da funcao membro export_csv,
+essa funcao acessa um vector de ponteiros para pair 
+e cria um arquvido wide output stream, 
+nesse arquivo sao colocados os elementos ordenados do vector 
+e sao formatados para o padrao csv para a criacao de uma tabela.
+*/
+
 void processOutputs::export_csv(){
     std::wofstream csv("saida.csv"); 
-    csv << "\"Palavra\";\"N\"\n"; //coloca os titulos das colunas do CSV
+    csv << "\"Palavra\";\"N\"\n"; 
     for(auto loça : vector_saida){
-        csv << '"' << loça->first << '"' << ';' << loça->second << std::endl; //mandamos para o csv. a string precisa estar entre aspas
+        csv << '"' << loça->first << '"' << ';' << loça->second << std::endl; 
     }
 
 
