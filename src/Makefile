@@ -17,4 +17,4 @@ palavras: main.cpp processInputs.o processMap.o processOutputs.o
 	${CC} ${FLAGS} main.cpp processInputs.o processMap.o processOutputs.o -o palavras
 
 clean:
-	rm -f *.o palavras
+	rm -f *.o *.html *.csv 

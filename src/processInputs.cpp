@@ -74,6 +74,9 @@ namespace inp{
                     formato_saida = "-html"; //caso for csv, permanece na declaração do construtor
                 
                 }
+                else if(strcmp(argv[i], "-csv") == 0){
+                    formato_saida = "-csv";
+                }
 
                 else
                     nome_arquivo = argv[i];

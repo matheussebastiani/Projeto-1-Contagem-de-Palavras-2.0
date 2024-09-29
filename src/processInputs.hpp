@@ -73,7 +73,7 @@ class processInputs{
         }
 
         int get_palavras_distintas(){
-            return palavras_distintas;
+            return ocorrencias.size();
         }
         //funções de set não serão implementadas pois as variáveis membro serão alteradas por dentro da classe.
         
