@@ -16,6 +16,7 @@ podendo ser CSV ou HTML
 #include <vector>
 #include <string>
 
+namespace out{
 
 class processOutputs{
     private:
@@ -27,7 +28,7 @@ class processOutputs{
 
 
 };
-
+}
 
 
 
