@@ -22,6 +22,10 @@ class processOutputs{
     private:
         std::vector<std::pair<const std::wstring, int>*> vector_saida;
     public:
+        processOutputs(std::vector<std::pair<const std::wstring, int>*> vet) : vector_saida{vet}{
+            
+        } 
+
         void export_html();
         void export_csv();
 
