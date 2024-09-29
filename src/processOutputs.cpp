@@ -1,7 +1,7 @@
 #include "processOutputs.hpp"
 #include <string>
 #include <fstream>
-
+#include <iostream>
 namespace out{
 
 /*
@@ -17,55 +17,56 @@ void processOutputs::export_html(){
     std::wstring nome_saida = L"HTML OUTPUT";
     std::wofstream html("saida.html");
 
-    html << "<!DOCTYPE html>\n";
-    html << "<html lang=\"pt-br\">\n";
-    html << "<head>\n";
-    html << "    <meta charset=\"UTF-8\">\n";
-    html << "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n";
-    html << "    <title>" << nome_saida << "</title>\n";
+    html << L"<!DOCTYPE html>\n";
+    html << L"<html lang=\"pt-br\">\n";
+    html << L"<head>\n";
+    html << L"    <meta charset=\"UTF-8\">\n";
+    html << L"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n";
+    html << L"    <title>" << nome_saida << "</title>\n";
     
-    html << "    <style>\n";
-    html << "        table {\n";
-    html << "            width: 100%;\n";
-    html << "            border-collapse: collapse;\n"; //remove espaços entre bordas de células
-    html << "        }\n";
-    html << "        th, td {\n"; //th -> table header cell. td -> table data cell 
-    html << "            border: 1px solid black;\n"; //coloca borda nas células
-    html << "            padding: 8px;\n"; //coloca espaçamento interno nas células
-    html << "            text-align: left;\n"; //centraliza o texto
-    html << "        }\n";
-    html << "        th {\n";
-    html << "            background-color: #f2f2f2;\n"; //adiciona uma cor de fundo aos cabeçalhos
-    html << "        }\n";
-    html << "    </style>\n";
-    html << "</head>\n";
-    html << "<body>\n";
-    html << "\n";
-    html << "    <table>\n";
-    html << "        <thead>\n";
-    html << "            <tr>\n";
-    html << "                <th>Palavra</th>\n";
-    html << "                <th>Ocorrências</th>\n";
-    html << "            </tr>\n";
-    html << "        </thead>\n";
-    html << "        <tbody>\n";
+    html << L"    <style>\n";
+    html << L"        table {\n";
+    html << L"            width: 100%;\n";
+    html << L"            border-collapse: collapse;\n"; //remove espaços entre bordas de células
+    html << L"        }\n";
+    html << L"        th, td {\n"; //th -> table header cell. td -> table data cell 
+    html << L"            border: 1px solid black;\n"; //coloca borda nas células
+    html << L"            padding: 8px;\n"; //coloca espaçamento interno nas células
+    html << L"            text-align: left;\n"; //centraliza o texto
+    html << L"        }\n";
+    html << L"        th {\n";
+    html << L"            background-color: #f2f2f2;\n"; //adiciona uma cor de fundo aos cabeçalhos
+    html << L"        }\n";
+    html << L"    </style>\n";
+    html << L"</head>\n";
+    html << L"<body>\n";
+    html << L"\n";
+    html << L"    <table>\n";
+    html << L"        <thead>\n";
+    html << L"            <tr>\n";
+    html << L"                <th>Palavra</th>\n";
+    html << L"                <th>Ocorrências</th>\n";
+    html << L"            </tr>\n";
+    html << L"        </thead>\n";
+    html << L"        <tbody>\n";
 
     
 
-    for(auto loça : vector_saida){
-        html << "            <tr>\n";
-        html << "                <td>" << loça->first << "</td>\n";
-        html << "                <td>" << loça->second << "</td>\n";
-        html << "            </tr>\n";
+    for(auto loca : vector_saida){
+        html << L"            <tr>\n";
+        html << L"                <td>" << loca->first << "</td>\n";
+        html << L"                <td>" << loca->second << "</td>\n";
+        html << L"            </tr>\n";
     }
 
 
 
-    html << "        </tbody>\n";
-    html << "    </table>\n";
-    html << "</body>\n";
-    html << "</html>\n";
+    html << L"        </tbody>\n";
+    html << L"    </table>\n";
+    html << L"</body>\n";
+    html << L"</html>\n";
 
+    //é necessário utilizar o L para indicar que está sendo enviado uma wstring!
 }
 
 
@@ -80,8 +81,8 @@ e sao formatados para o padrao csv para a criacao de uma tabela.
 void processOutputs::export_csv(){
     std::wofstream csv("saida.csv"); 
     csv << "\"Palavra\";\"N\"\n"; 
-    for(auto loça : vector_saida){
-        csv << '"' << loça->first << '"' << ';' << loça->second << std::endl; 
+    for(auto loca : vector_saida){
+        csv << '"' << loca->first << '"' << ';' << loca->second << std::endl; 
     }
 
 
