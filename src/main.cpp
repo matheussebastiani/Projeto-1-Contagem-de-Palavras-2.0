@@ -1,9 +1,9 @@
-#include "processInputs.hpp"
+#include "classes/processInputs.hpp"
 #include <iostream>
-#include "processMap.hpp"
+#include "classes/processMap.hpp"
 #include <map>
 #include <vector>
-#include "processOutputs.hpp"
+#include "classes/processOutputs.hpp"
 
 int main(int argc, char* argv[]){
 
